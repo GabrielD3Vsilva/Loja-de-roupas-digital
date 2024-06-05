@@ -14,18 +14,14 @@ function Home ( ) {
             
                 <div className="flex justify-center">
                     <section className="flex flex-wrap justify-evenly mt-14 gap-16">
-                        <ProductItem title={'teste'} value={10} image={'teste'}/>
-                        <ProductItem title={'teste'} value={10} image={'teste'}/>
-                        <ProductItem title={'teste'} value={10} image={'teste'}/>
-                        <ProductItem title={'teste'} value={10} image={'teste'}/>
-                        <ProductItem title={'teste'} value={10} image={'teste'}/>
-                        <ProductItem title={'teste'} value={10} image={'teste'}/>
-                        <ProductItem title={'teste'} value={10} image={'teste'}/>
-                        <ProductItem title={'teste'} value={10} image={'teste'}/>
-                        <ProductItem title={'teste'} value={10} image={'teste'}/>
-                        <ProductItem title={'teste'} value={10} image={'teste'}/>
-                        <ProductItem title={'teste'} value={10} image={'teste'}/>
-                        <ProductItem title={'teste'} value={10} image={'teste'}/>
+                        <ProductItem title={'Camiseta branca'} description={'Camiseta branca com tecnologia que desamassa ao colocar ao corpo, e tem propriedades anti-suor'} value={10} image={'https://tse3.mm.bing.net/th?id=OIP._so1t1r-5cZxxMnosl4GmQHaHa&pid=Api&P=0&h=180'}/>
+                        <ProductItem title={'Camiseta branca'} description={'Camiseta branca com tecnologia que desamassa ao colocar ao corpo, e tem propriedades anti-suor'} value={10} image={'https://tse3.mm.bing.net/th?id=OIP._so1t1r-5cZxxMnosl4GmQHaHa&pid=Api&P=0&h=180'}/>
+                        <ProductItem title={'Camiseta branca'} description={'Camiseta branca com tecnologia que desamassa ao colocar ao corpo, e tem propriedades anti-suor'} value={10} image={'https://tse3.mm.bing.net/th?id=OIP._so1t1r-5cZxxMnosl4GmQHaHa&pid=Api&P=0&h=180'}/>
+                        <ProductItem title={'Camiseta branca'} description={'Camiseta branca com tecnologia que desamassa ao colocar ao corpo, e tem propriedades anti-suor'} value={10} image={'https://tse3.mm.bing.net/th?id=OIP._so1t1r-5cZxxMnosl4GmQHaHa&pid=Api&P=0&h=180'}/>
+                        <ProductItem title={'Camiseta branca'} description={'Camiseta branca com tecnologia que desamassa ao colocar ao corpo, e tem propriedades anti-suor'} value={10} image={'https://tse3.mm.bing.net/th?id=OIP._so1t1r-5cZxxMnosl4GmQHaHa&pid=Api&P=0&h=180'}/>
+                        <ProductItem title={'Camiseta branca'} description={'Camiseta branca com tecnologia que desamassa ao colocar ao corpo, e tem propriedades anti-suor'} value={10} image={'https://tse3.mm.bing.net/th?id=OIP._so1t1r-5cZxxMnosl4GmQHaHa&pid=Api&P=0&h=180'}/>
+                        <ProductItem title={'Camiseta branca'} description={'Camiseta branca com tecnologia que desamassa ao colocar ao corpo, e tem propriedades anti-suor'} value={10} image={'https://tse3.mm.bing.net/th?id=OIP._so1t1r-5cZxxMnosl4GmQHaHa&pid=Api&P=0&h=180'}/>
+                        <ProductItem title={'Camiseta branca'} description={'Camiseta branca com tecnologia que desamassa ao colocar ao corpo, e tem propriedades anti-suor'} value={10} image={'https://tse3.mm.bing.net/th?id=OIP._so1t1r-5cZxxMnosl4GmQHaHa&pid=Api&P=0&h=180'}/>
                     </section>
                 </div>
                 
