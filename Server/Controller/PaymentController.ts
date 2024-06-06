@@ -21,8 +21,15 @@ async function CreatePayment (req: any, res: any) {
                 quantity: 1,
                 currency_id: 'BRL',
                 unit_price: value,
-                },
-            ]
+                picture_url: image,
+                description: description,
+                }
+            ], 
+                back_urls: {
+                    success: 'http://localhost:5173/',
+                    failure: 'http://localhost:5173/'
+              },
+            
         };
     
         const pay = await preference.create({body}).then((response)=>{

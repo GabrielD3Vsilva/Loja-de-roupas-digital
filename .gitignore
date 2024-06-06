@@ -17,7 +17,8 @@ pids
 *.seed
 *.pid.lock
 
-
+AdminController.js
+db.js
 .env
 server.js
 routes.js
