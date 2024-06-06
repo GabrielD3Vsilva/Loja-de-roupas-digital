@@ -25,7 +25,9 @@ async function CreatePayment (req: any, res: any) {
             ]
         };
     
-        await preference.create({body}).then((response)=>console.log(response)).catch((error)=>console.log(error));
+        const pay = await preference.create({body}).then((response)=>{
+            return res.status(200).json({init: response.init_point});
+        }).catch((error)=>console.log(error));
 }
 
 

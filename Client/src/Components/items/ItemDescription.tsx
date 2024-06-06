@@ -3,8 +3,8 @@ import {Link} from "react-router-dom";
 import axios from 'axios';
 
 function ItemDescription ( ) {
-    const location = useLocation( );
-    const infoFromProduct = location.state;
+    const locationRef = useLocation( );
+    const infoFromProduct = locationRef.state;
 
     const RedirectToMercadoPago = async ( ) => {
         const title = infoFromProduct.title;
@@ -17,7 +17,12 @@ function ItemDescription ( ) {
 
         await axios.post('http://localhost:8080/payment', JSON.stringify(objectInfo), {
             headers: {"Content-Type": "application/json"}
+        }).then((response)=>{
+            window.location.href = response.data.init
         })
+        .catch((error)=>console.log(error));
+
+        
     }
 
     // serão permitidas descrições de até 94 caracteres
