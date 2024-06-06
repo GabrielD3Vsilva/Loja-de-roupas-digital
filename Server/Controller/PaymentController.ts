@@ -1,27 +1,34 @@
-import {MercadoPagoConfig, Preference} from 'mercadopago';
+import { MercadoPagoConfig, Preference } from "mercadopago";
+import dotenv from 'dotenv'
 
-const key: any = process.env.KEY
+dotenv.config( );
 
-async function CreatePreference ( ) {
-    const client: MercadoPagoConfig = new MercadoPagoConfig({ accessToken: key });
+const key: any = process.env.KEY;
+
+async function CreatePayment (req: any, res: any) {
+        const {title, value, image, description} = req.body;
     
-    const preference = new Preference(client);
+        console.log({title, value, image, description});
+        const client = new MercadoPagoConfig({ accessToken: key});
+
+        const preference = new Preference(client);
     
-    const body = {
-        items: [
-            {
-            id: '1234',
-            title: 'Camisa',
-            quantity: 1,
-            currency_id: 'BRL',
-            unit_price: 90,
-            },
-        ]
-    };
+        const body = {
+            items: [
+                {
+                id: '1',
+                title: title,
+                quantity: 1,
+                currency_id: 'BRL',
+                unit_price: value,
+                },
+            ]
+        };
+    
+        await preference.create({body}).then((response)=>console.log(response)).catch((error)=>console.log(error));
 }
 
 
 export default {
-    CreatePreference,
-
+    CreatePayment
 }

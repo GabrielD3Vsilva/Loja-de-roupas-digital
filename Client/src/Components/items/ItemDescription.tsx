@@ -1,12 +1,26 @@
 import {useLocation} from 'react-router-dom'
 import {Link} from "react-router-dom";
+import axios from 'axios';
 
 function ItemDescription ( ) {
-    const location = useLocation( )
+    const location = useLocation( );
+    const infoFromProduct = location.state;
+
+    const RedirectToMercadoPago = async ( ) => {
+        const title = infoFromProduct.title;
+        const value = infoFromProduct.value;
+        const image = infoFromProduct.image;
+        const description = infoFromProduct.description;;
+
+        const objectInfo = {title: title, value: value, image: image, description: description}
+        console.log({title, value, image, description});
+
+        await axios.post('http://localhost:8080/payment', JSON.stringify(objectInfo), {
+            headers: {"Content-Type": "application/json"}
+        })
+    }
 
     // serão permitidas descrições de até 94 caracteres
-
-    const infoFromProduct = location.state;
 
     return (
         <div className='h-screen w-screen'>
@@ -28,7 +42,7 @@ function ItemDescription ( ) {
                         {infoFromProduct.description} 
                     </p>
 
-                        <button className='bg-red-800 transition-all ease-in-out text-white px-2 py-1 mt-7 hover:bg-red-500'>
+                        <button className='bg-red-800 transition-all ease-in-out text-white px-2 py-1 mt-7 hover:bg-red-500' onClick={( )=>RedirectToMercadoPago()}>
                             Comprar item
                         </button>
 

@@ -1,9 +1,9 @@
 import express from "express";
+import PaymentController from "../Controller/PaymentController";
 
-const routes = express.Router( );
+const routes =  express.Router( );
 
-routes.post('/', (req, res)=>{
-    console.log('ok')
-})
+routes.post('/payment', PaymentController.CreatePayment);
 
-export default routes
+export default routes;
+
