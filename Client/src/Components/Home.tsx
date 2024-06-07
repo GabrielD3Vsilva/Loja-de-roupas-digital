@@ -1,10 +1,13 @@
 import ProductItem from './items/ProductItem';
+import {Link} from 'react-router-dom'
 
 function Home ( ) {
     return (
         <div className="bg-white h-screen w-screen">
-            <header className="bg-red-800 py-8">
+            <header className="bg-red-800 px-8 py-8 flex justify-between">
                 <h1 className="text-center text-white text-3xl">Fashion project</h1>
+
+                <Link to="/adm" className="px-2 text-white bg-red-950 py-2 transition-all hover:bg-red-600 font-semibold">Administrador</Link>
             </header>
 
 
