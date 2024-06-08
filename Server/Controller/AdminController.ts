@@ -1,4 +1,6 @@
-import Adm from '../Db/db';
+import dotenv from 'dotenv';
+
+dotenv.config( );
 
 type AdmType = {
     email: string,
@@ -18,7 +20,7 @@ async function validateAdmInfos (req:any, res:any) {
     } else {
         const isAdm = await validateIfInfoIsTrue(email, password);
 
-        if(isAdm==false){
+        if(isAdm==true){
             return res.status(200).json({message: 'isAdm'});
         } else {
             console.log('não existe')
@@ -30,22 +32,20 @@ async function validateAdmInfos (req:any, res:any) {
 }
 
 function validateIfInputsIsEmpty (email: string, password: string) {
-    if(email!=='' && password!=='') {
+    if(email!=='' && password!=='' && email!==undefined && password!==undefined) {
         return false;
     } 
     return true;
 }
 
 async function validateIfInfoIsTrue(email: string, password: string) {
-    try {
-        const admInDB = await Adm.find({email: email, password: password});
-        if(admInDB.length > 0) {
-            return true;
-        } 
-        return false;
-    } catch (error){
-        console.error(error)
-    }
+    const adm = {emailAdm: process.env.EMAIL, passwordAdm: process.env.PASSWORD};
+
+    console.log(adm, email, password)
+    if(email == adm.emailAdm && password == adm.passwordAdm) {
+        return true;
+    }      
+    return false;
     
 } 
 
