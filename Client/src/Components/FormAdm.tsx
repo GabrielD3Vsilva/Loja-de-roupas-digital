@@ -3,7 +3,6 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-
 function FormAdm ( ) {
     const navigate = useNavigate( );
     const [email, setEmail] = useState <any> ( );
@@ -17,7 +16,7 @@ function FormAdm ( ) {
         })
         .then((response)=>{
             console.log(response.data);
-            navigate('/'); 
+            navigate('/homeAdm'); 
         })
         .catch((error)=>console.log('houve o erro: ', error));
 

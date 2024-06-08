@@ -49,7 +49,6 @@ async function validateIfInfoIsTrue(email: string, password: string) {
     
 } 
 
-
 export default {
     validateAdmInfos
 }
