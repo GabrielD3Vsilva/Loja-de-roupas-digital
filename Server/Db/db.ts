@@ -9,3 +9,15 @@ mongoose.connect(url)
 .then(()=>console.log('mongoDb connected'))
 .catch((error)=> console.log(error))
 
+const productSchema = new mongoose.Schema({
+    title: String,
+    value: Number,
+    description: String,
+    image: String
+})
+
+const Product = mongoose.model('Product', productSchema);
+
+export default {
+    Product
+}
