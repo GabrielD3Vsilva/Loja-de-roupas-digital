@@ -24,7 +24,7 @@ function AddProductsAdm ( ) {
     return (
         <section className="bg-white flex justify-center">
             <div className="bg-red-800 mt-20 text-white flex-col justify-center text-center py-10 px-10">
-                <h1 className="text-2xl mb-3">Adicione produto</h1>
+                <h1 className="text-lg md:text-2xl mb-3">Adicione produto</h1>
                 <form className="flex flex-col gap-3" onSubmit={(e)=>handleProduct(e)}>
                     <input type="text" placeholder="Título do produto" className="py-1 text-center text-gray-700"
                     onChange={(e)=>setTitle(e.target.value)}
@@ -41,7 +41,7 @@ function AddProductsAdm ( ) {
 
                     <input type="submit" value="Adicionar" className="px-2 bg-red-950 py-2 transition-all hover:bg-red-600 font-semibold" />
 
-                    <Link to="/" className="px-2 bg-red-950 py-2 transition-all hover:bg-red-600 font-semibold">Voltar ao inicio</Link>
+                    <Link to="/homeAdm" className="px-2 text-center bg-red-950 py-2 transition-all hover:bg-red-600 font-semibold">Voltar ao inicio</Link>
                 </form>
             </div>
         </section>        

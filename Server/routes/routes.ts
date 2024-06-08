@@ -7,6 +7,7 @@ const routes =  express.Router( );
 routes.post('/payment', PaymentController.CreatePayment);
 routes.post('/adm', AdminController.validateAdmInfos);
 routes.post('/getProductsInfo', AdminController.getProductsInfo);
+routes.get('/findAndReturnProducts', AdminController.findAndReturnProducts);
 
 export default routes;
 

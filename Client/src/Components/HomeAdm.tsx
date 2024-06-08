@@ -1,7 +1,15 @@
 import ProductItem from './items/ProductItem';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 function HomeAdm ( ) {
+    useEffect(( )=>{
+        axios.get('http://localhost:8080/findAndReturnProducts')
+        .then((response)=>console.log(response.data.products))
+        .catch((error)=>console.log(error));
+    }, [])
+
     return (
         <div className="bg-white h-screen w-screen">
             <header className="bg-red-800 px-8 py-8 flex justify-between">

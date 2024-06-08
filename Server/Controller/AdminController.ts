@@ -84,7 +84,18 @@ async function createAProduct ({title, description, value, image}: ProductsInfo)
     .catch((error)=>(error));
 }
 
+async function findAndReturnProducts (req: any, res: any) {
+    try {
+        const products = await db.Product.find({});
+        console.log('find products')
+        res.status(200).json({products});
+    }catch(error) {
+        console.error(error)
+    }
+}
+
 export default {
     validateAdmInfos,
-    getProductsInfo
+    getProductsInfo,
+    findAndReturnProducts
 }
