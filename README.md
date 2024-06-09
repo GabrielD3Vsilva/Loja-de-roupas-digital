@@ -21,3 +21,34 @@
 Imagem do menu inicial, onde usuários poderão ver os itens de compra e ver as descrições de cada produto.
 
 
+
+![Captura de tela 2024-06-09 123022](https://github.com/GabrielD3Vsilva/Loja-de-roupas-digital/assets/123119325/edc60118-df13-408f-bbd2-e9823bbed4eb)
+Imagem que representa a tela onde mostrará mais detalhes sobre um produto em especifico.
+contendo também a possibilidade de fazer o pagamento (após esta escolha o usuário será redirecionado para o mercado pago com a devida cobrança do produto1)
+
+
+![Captura de tela 2024-06-09 123035](https://github.com/GabrielD3Vsilva/Loja-de-roupas-digital/assets/123119325/c62942fa-d858-47d5-adf9-06daee3692e3)
+Caso o usuário seja um administrador ele poderá entrar na conta de adm, este é o formulário que possibilita a validação das credenciais de administração.
+Fornecerei as credencias de administração para que possam testar as funcionalidades extras
+(
+   email: adm@gmail.com
+   senha: 1981abcd.
+)
+
+
+
+![Captura de tela 2024-06-09 123057](https://github.com/GabrielD3Vsilva/Loja-de-roupas-digital/assets/123119325/fe8b97e9-cc40-4bde-8427-7976a56e8178)
+Imagem que representa o menu inicial para o administrador, contendo as funcionalidades extras de: excluir ou adicionar produtos ao menu
+
+
+
+![Captura de tela 2024-06-09 123112](https://github.com/GabrielD3Vsilva/Loja-de-roupas-digital/assets/123119325/3e693e07-93c4-433b-8db5-35c0950e67c9)
+Caso o administrador opte por adicionar um novo produto, ele terá este pequeno formulário que pede: 
+   *título
+   *descrição, 
+   *custo
+   *url de imagem para o produto (eu adicionarei a funcionalidade que proporciona adicionar a imagem sem necessitar da url, mas por enquanto segue este padrão)
+
+
+
+
