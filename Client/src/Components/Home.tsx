@@ -21,7 +21,7 @@ function Home ( ) {
             return <h2>Não existem produtos adicionados</h2>
         } else {
             return products.map((product)=>{
-                return <ProductItem title={product.title} description={product.description} value={product.value} image={product.image}/>
+                return <ProductItem title={product.title} description={product.description} value={product.value} image={product.image} isAdm={false}/>
             })
         }
     } 

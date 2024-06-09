@@ -1,19 +1,33 @@
-import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom';
+import axios from 'axios';
 
 type ProductsInfo = {
     title: string,
     value: number,
     image: string,
-    description: string
+    description: string,
+    isAdm: boolean
 }
 
-function ProductItem ({title, value, image, description}: ProductsInfo) {
+function ProductItem ({title, value, image, description, isAdm}: ProductsInfo) {
     const navigate = useNavigate( );
 
     const redirectToDescription = ( ) => {
         navigate('/description', {state: {
             title, value, image, description
         }})
+    }
+
+    const deleteProduct = async ( ) => {
+        await axios.post('http://localhost:8080/deleteProduct', JSON.stringify({title: title, value: value, image: image, description: description}),
+        {
+            headers: {"Content-Type": "application/json"}
+        }).then(
+            (response) => {
+                console.log(response.data);
+                window.location.reload( );
+            }
+        ).catch((error)=>console.log('erro ao deletar produto: ', error));
     }
 
     return (
@@ -31,10 +45,16 @@ function ProductItem ({title, value, image, description}: ProductsInfo) {
                 <img src={image}/>
             </h3>
 
-
             <button onClick={( )=>redirectToDescription( )} className="bg-red-800 px-2 py-1 text-white text-lg transition-all ease-in-out hover:bg-red-400" >
                 Ver mais detalhes
             </button>
+
+            {isAdm? 
+            <button onClick={( )=>deleteProduct( )} className="bg-red-800 px-2 py-1 text-white text-lg transition-all ease-in-out hover:bg-red-400" >
+            Deletar produto
+            </button>
+            :<></>}
+            
         </section>
     )
 }

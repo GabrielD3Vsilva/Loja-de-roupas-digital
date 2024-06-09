@@ -94,8 +94,28 @@ async function findAndReturnProducts (req: any, res: any) {
     }
 }
 
+async function deleteProduct (req: any, res: any) {
+    const {title, value, description, image}: ProductsInfo = req.body;
+
+    try {
+        await db.Product.deleteOne({
+        title: title,
+        value: value,
+        description: description,
+        image: image
+        });
+
+        return res.status(200).json({message: 'deleted'});
+
+    } catch (error) {
+        console.error(error);
+    }
+    
+}
+
 export default {
     validateAdmInfos,
     getProductsInfo,
-    findAndReturnProducts
+    findAndReturnProducts,
+    deleteProduct
 }

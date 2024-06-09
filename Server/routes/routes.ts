@@ -8,6 +8,7 @@ routes.post('/payment', PaymentController.CreatePayment);
 routes.post('/adm', AdminController.validateAdmInfos);
 routes.post('/getProductsInfo', AdminController.getProductsInfo);
 routes.get('/findAndReturnProducts', AdminController.findAndReturnProducts);
+routes.post('/deleteProduct', AdminController.deleteProduct);
 
 export default routes;
 
