@@ -20,7 +20,7 @@ function HomeAdm ( ) {
         if(!products || products == undefined ) {
             return <h2>Não existem produtos adicionados</h2>
         } else {
-            return products.map((product)=>{
+            return products.map((product: any)=>{
                 return <ProductItem title={product.title} description={product.description} value={product.value} image={product.image} isAdm={true}/>
             })
         }
