@@ -2,13 +2,29 @@ import ProductItem from './items/ProductItem';
 import {Link} from 'react-router-dom';
 import { useEffect } from 'react';
 import axios from 'axios';
+import { useState } from 'react';
 
 function HomeAdm ( ) {
+    const [products, setProducts] = useState( );
+
     useEffect(( )=>{
         axios.get('http://localhost:8080/findAndReturnProducts')
-        .then((response)=>console.log(response.data.products))
+        .then((response)=>{
+            console.log(response.data)
+            setProducts(response.data);
+        })
         .catch((error)=>console.log(error));
-    }, [])
+    }, []);
+
+    const renderProducts: any = ( ) => {
+        if(!products || products == undefined ) {
+            return <h2>Não existem produtos adicionados</h2>
+        } else {
+            return products.map((product)=>{
+                return <ProductItem title={product.title} description={product.description} value={product.value} image={product.image}/>
+            })
+        }
+    } 
 
     return (
         <div className="bg-white h-screen w-screen">
@@ -25,14 +41,7 @@ function HomeAdm ( ) {
             
                 <div className="flex justify-center">
                     <section className="flex flex-wrap justify-evenly mt-14 gap-16">
-                        <ProductItem title={'Camiseta branca'} description={'Camiseta branca com tecnologia que desamassa ao colocar ao corpo, e tem propriedades anti-suor'} value={10} image={'https://tse3.mm.bing.net/th?id=OIP._so1t1r-5cZxxMnosl4GmQHaHa&pid=Api&P=0&h=180'}/>
-                        <ProductItem title={'Camiseta branca'} description={'Camiseta branca com tecnologia que desamassa ao colocar ao corpo, e tem propriedades anti-suor'} value={10} image={'https://tse3.mm.bing.net/th?id=OIP._so1t1r-5cZxxMnosl4GmQHaHa&pid=Api&P=0&h=180'}/>
-                        <ProductItem title={'Camiseta branca'} description={'Camiseta branca com tecnologia que desamassa ao colocar ao corpo, e tem propriedades anti-suor'} value={10} image={'https://tse3.mm.bing.net/th?id=OIP._so1t1r-5cZxxMnosl4GmQHaHa&pid=Api&P=0&h=180'}/>
-                        <ProductItem title={'Camiseta branca'} description={'Camiseta branca com tecnologia que desamassa ao colocar ao corpo, e tem propriedades anti-suor'} value={10} image={'https://tse3.mm.bing.net/th?id=OIP._so1t1r-5cZxxMnosl4GmQHaHa&pid=Api&P=0&h=180'}/>
-                        <ProductItem title={'Camiseta branca'} description={'Camiseta branca com tecnologia que desamassa ao colocar ao corpo, e tem propriedades anti-suor'} value={10} image={'https://tse3.mm.bing.net/th?id=OIP._so1t1r-5cZxxMnosl4GmQHaHa&pid=Api&P=0&h=180'}/>
-                        <ProductItem title={'Camiseta branca'} description={'Camiseta branca com tecnologia que desamassa ao colocar ao corpo, e tem propriedades anti-suor'} value={10} image={'https://tse3.mm.bing.net/th?id=OIP._so1t1r-5cZxxMnosl4GmQHaHa&pid=Api&P=0&h=180'}/>
-                        <ProductItem title={'Camiseta branca'} description={'Camiseta branca com tecnologia que desamassa ao colocar ao corpo, e tem propriedades anti-suor'} value={10} image={'https://tse3.mm.bing.net/th?id=OIP._so1t1r-5cZxxMnosl4GmQHaHa&pid=Api&P=0&h=180'}/>
-                        <ProductItem title={'Camiseta branca'} description={'Camiseta branca com tecnologia que desamassa ao colocar ao corpo, e tem propriedades anti-suor'} value={10} image={'https://tse3.mm.bing.net/th?id=OIP._so1t1r-5cZxxMnosl4GmQHaHa&pid=Api&P=0&h=180'}/>
+                        {renderProducts( )}
                     </section>
                 </div>
                 

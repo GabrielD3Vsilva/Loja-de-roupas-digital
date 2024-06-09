@@ -17,7 +17,7 @@ function ProductItem ({title, value, image, description}: ProductsInfo) {
     }
 
     return (
-        <section className="w-5/6 md:w-1/4 border-2 border-black text-center py-10 flex flex-col gap-4">
+        <section className="px-8 border-2 border-black text-center py-10 flex flex-col gap-4">
             <h3 className="text-2xl font-bold text-red-600
             ">
                 {title}

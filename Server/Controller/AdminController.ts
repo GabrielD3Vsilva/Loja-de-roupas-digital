@@ -88,7 +88,7 @@ async function findAndReturnProducts (req: any, res: any) {
     try {
         const products = await db.Product.find({});
         console.log('find products')
-        res.status(200).json({products});
+        res.status(200).json(products);
     }catch(error) {
         console.error(error)
     }
