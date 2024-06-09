@@ -15,3 +15,9 @@
 * Node
 * Tailwind
 * MongoDB
+
+
+![Captura de tela 2024-06-09 122954](https://github.com/GabrielD3Vsilva/Loja-de-roupas-digital/assets/123119325/d325bc6c-74ff-4c6b-801f-5b1397d6c2eb)
+Imagem do menu inicial, onde usuários poderão ver os itens de compra e ver as descrições de cada produto.
+
+
