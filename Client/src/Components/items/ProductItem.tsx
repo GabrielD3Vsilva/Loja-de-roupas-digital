@@ -42,7 +42,7 @@ function ProductItem ({title, value, image, description, isAdm}: ProductsInfo) {
             </h4>
 
             <h3 className="flex justify-center">
-                <img src={image}/>
+                <img src={image} className='w-40 h-52'/>
             </h3>
 
             <button onClick={( )=>redirectToDescription( )} className="bg-red-800 px-2 py-1 text-white text-lg transition-all ease-in-out hover:bg-red-400" >
@@ -54,7 +54,6 @@ function ProductItem ({title, value, image, description, isAdm}: ProductsInfo) {
             Deletar produto
             </button>
             :<></>}
-            
         </section>
     )
 }
